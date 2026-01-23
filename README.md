@@ -19,7 +19,7 @@ $ cat example.md | runblock
 ### With default command
 
 ```console
-$ runblock -c "cat" example.md
+$ runblock --default-command "cat" example.md
 ```
 
 ### Watch mode
@@ -113,7 +113,7 @@ The code block content is also passed to the command via stdin.
 ### Using default command for all blocks
 
 ```console
-$ runblock -c "cat > block_{{i}}.txt" example.md
+$ runblock --default-command "cat > block_{{i}}.txt" example.md
 ```
 
 This saves each code block to a separate file.
@@ -130,8 +130,8 @@ $ go install github.com/k1LoW/runblock@latest
 
 ```
 Flags:
-  -c, --command string   default command for code blocks without explicit command
-  -h, --help             help for runblock
-  -v, --version          version for runblock
-  -w, --watch            watch the file for changes and re-run on modifications
+      --default-command string   default command for code blocks without explicit command
+  -h, --help                     help for runblock
+  -v, --version                  version for runblock
+  -w, --watch                    watch the file for changes and re-run on modifications
 ```

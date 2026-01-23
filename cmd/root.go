@@ -82,7 +82,7 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.Flags().StringVarP(&defaultCommand, "command", "c", "",
+	rootCmd.Flags().StringVar(&defaultCommand, "default-command", "",
 		"default command for code blocks without explicit command")
 	rootCmd.Flags().BoolVarP(&watch, "watch", "w", false,
 		"watch the file for changes and re-run on modifications")
