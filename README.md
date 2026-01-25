@@ -22,6 +22,16 @@ $ cat example.md | runblock
 $ runblock --default-command "cat" example.md
 ```
 
+### With language-specific commands
+
+Use `-c` to specify commands for specific languages:
+
+```console
+$ runblock -c 'go:gofmt' -c 'python:python3' example.md
+```
+
+Multiple `-c` flags can be used to specify different commands for different languages.
+
 ### Watch mode
 
 You can use the `--watch` flag to continuously monitor changes to your Markdown file and automatically re-run when the file is modified:
@@ -130,8 +140,17 @@ $ go install github.com/k1LoW/runblock@latest
 
 ```
 Flags:
+  -c, --command stringArray      command for specific language (format: lang:command, e.g., 'go:gofmt')
       --default-command string   default command for code blocks without explicit command
   -h, --help                     help for runblock
   -v, --version                  version for runblock
   -w, --watch                    watch the file for changes and re-run on modifications
 ```
+
+## Command priority
+
+Commands are resolved in the following order (highest priority first):
+
+1. Command specified in the code block info string (e.g., ` ```go gofmt `)
+2. Language-specific command via `-c` flag
+3. Default command via `--default-command` flag

@@ -38,14 +38,16 @@ import (
 // Runner executes commands for code blocks.
 type Runner struct {
 	DefaultCommand string
+	Commands       map[string]string // language -> command
 	Stdout         io.Writer
 	Stderr         io.Writer
 }
 
-// New creates a new Runner with the given default command.
-func New(defaultCommand string) *Runner {
+// New creates a new Runner with the given default command and language-specific commands.
+func New(defaultCommand string, commands map[string]string) *Runner {
 	return &Runner{
 		DefaultCommand: defaultCommand,
+		Commands:       commands,
 		Stdout:         os.Stdout,
 		Stderr:         os.Stderr,
 	}
@@ -54,8 +56,11 @@ func New(defaultCommand string) *Runner {
 // Run executes the command for a code block.
 // index is the 0-based index of the code block.
 func (r *Runner) Run(ctx context.Context, block parser.CodeBlock, index int) error {
-	// Determine command to use
+	// Determine command to use (priority: block command > language command > default command)
 	cmd := block.Command
+	if cmd == "" && r.Commands != nil {
+		cmd = r.Commands[block.Language]
+	}
 	if cmd == "" {
 		cmd = r.DefaultCommand
 	}
