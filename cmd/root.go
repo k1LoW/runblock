@@ -29,6 +29,7 @@ import (
 	"os"
 	"os/signal"
 	"path/filepath"
+	"strings"
 	"syscall"
 	"time"
 
@@ -41,6 +42,7 @@ import (
 
 var (
 	defaultCommand string
+	commands       []string
 	watch          bool
 )
 
@@ -84,6 +86,8 @@ func Execute() {
 func init() {
 	rootCmd.Flags().StringVar(&defaultCommand, "default-command", "",
 		"default command for code blocks without explicit command")
+	rootCmd.Flags().StringArrayVarP(&commands, "command", "c", nil,
+		"command for specific language (format: lang:command, e.g., 'go:gofmt')")
 	rootCmd.Flags().BoolVarP(&watch, "watch", "w", false,
 		"watch the file for changes and re-run on modifications")
 }
@@ -128,8 +132,14 @@ func runOnce(ctx context.Context, args []string) error {
 		return fmt.Errorf("failed to parse markdown: %w", err)
 	}
 
+	// Parse language-specific commands
+	cmdMap, err := parseCommands(commands)
+	if err != nil {
+		return err
+	}
+
 	// Execute code blocks
-	r := runner.New(defaultCommand)
+	r := runner.New(defaultCommand, cmdMap)
 
 	return r.RunAll(ctx, blocks)
 }
@@ -210,4 +220,25 @@ func runWatch(ctx context.Context, filePath string) error {
 			}
 		}
 	}
+}
+
+// parseCommands parses command flags in the format "lang:command" into a map.
+func parseCommands(cmds []string) (map[string]string, error) {
+	if len(cmds) == 0 {
+		return nil, nil
+	}
+	result := make(map[string]string)
+	for _, c := range cmds {
+		idx := strings.Index(c, ":")
+		if idx < 0 {
+			return nil, fmt.Errorf("invalid command format %q: expected 'lang:command'", c)
+		}
+		lang := c[:idx]
+		cmd := c[idx+1:]
+		if lang == "" {
+			return nil, fmt.Errorf("invalid command format %q: language cannot be empty", c)
+		}
+		result[lang] = cmd
+	}
+	return result, nil
 }
