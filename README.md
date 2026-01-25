@@ -130,6 +130,12 @@ This saves each code block to a separate file.
 
 ## Installation
 
+**Homebrew:**
+
+```console
+$ brew install k1LoW/tap/runblock
+```
+
 **go install:**
 
 ```console
