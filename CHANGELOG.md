@@ -1,10 +1,11 @@
 # Changelog
 
-## [v0.1.1](https://github.com/k1LoW/runblock/compare/v0.1.0...v0.1.1) - 2026-02-05
+## [v0.1.1](https://github.com/k1LoW/runblock/compare/v0.1.0...v0.1.1) - 2026-02-19
 ### Other Changes
 - chore(deps): bump Songmu/tagpr from 1.12.1 to 1.14.0 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/runblock/pull/7
 - chore(deps): bump github.com/google/cel-go from 0.26.1 to 0.27.0 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/runblock/pull/8
 - chore(deps): bump Songmu/tagpr from 1.14.0 to 1.15.0 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/runblock/pull/9
+- chore(deps): bump Songmu/tagpr from 1.15.0 to 1.17.0 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/runblock/pull/10
 
 ## [v0.1.0](https://github.com/k1LoW/runblock/compare/v0.0.2...v0.1.0) - 2026-01-25
 ### New Features 🎉
