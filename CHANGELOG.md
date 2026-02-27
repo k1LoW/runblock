@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.1.2](https://github.com/k1LoW/runblock/compare/v0.1.1...v0.1.2) - 2026-02-27
+### Other Changes
+- chore(deps): bump the dependencies group with 3 updates by @dependabot[bot] in https://github.com/k1LoW/runblock/pull/12
+
 ## [v0.1.1](https://github.com/k1LoW/runblock/compare/v0.1.0...v0.1.1) - 2026-02-05
 ### Other Changes
 - chore(deps): bump Songmu/tagpr from 1.12.1 to 1.14.0 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/runblock/pull/7
