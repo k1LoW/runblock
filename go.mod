@@ -4,9 +4,9 @@ go 1.25.9
 
 require (
 	github.com/fsnotify/fsnotify v1.9.0
-	github.com/google/cel-go v0.27.0
+	github.com/google/cel-go v0.28.0
 	github.com/spf13/cobra v1.10.2
-	github.com/yuin/goldmark v1.7.17
+	github.com/yuin/goldmark v1.8.2
 )
 
 require (
