@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.1.2](https://github.com/k1LoW/runblock/compare/v0.1.1...v0.1.2) - 2026-04-24
+### Other Changes
+- chore(deps): bump the dependencies group with 3 updates by @dependabot[bot] in https://github.com/k1LoW/runblock/pull/12
+- chore(deps): bump reviewdog/action-golangci-lint from 2.8.0 to 2.10.0 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/runblock/pull/15
+- chore(deps): bump github.com/yuin/goldmark from 1.7.16 to 1.7.17 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/runblock/pull/14
+- chore(deps): bump the dependencies group across 1 directory with 2 updates by @dependabot[bot] in https://github.com/k1LoW/runblock/pull/18
+- chore(deps): bump the dependencies group across 1 directory with 3 updates by @dependabot[bot] in https://github.com/k1LoW/runblock/pull/20
+
 ## [v0.1.1](https://github.com/k1LoW/runblock/compare/v0.1.0...v0.1.1) - 2026-02-19
 ### Other Changes
 - chore(deps): bump Songmu/tagpr from 1.12.1 to 1.14.0 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/runblock/pull/7
