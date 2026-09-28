@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.1.3](https://github.com/k1LoW/runblock/compare/v0.1.2...v0.1.3) - 2026-09-28
+
+### Other Changes
+- ci: generate CREDITS with gocredits v1.0.0 from a make target by @k1LoW in https://github.com/k1LoW/runblock/pull/39
+- chore(deps): bump Songmu/tagpr from 1.20.2 to 1.20.3 in the dependencies group by @dependabot[bot] in https://github.com/k1LoW/runblock/pull/38
+
 ## [v0.1.2](https://github.com/k1LoW/runblock/compare/v0.1.1...v0.1.2) - 2026-09-11
 
 ### Other Changes
